@@ -51,8 +51,11 @@ def print_recipe(title, link, total_time, image, instructions, to_file=False):
         f">> image: {image}",
         "\n" + instructions,
     ]
+
+    output_file = to_file if to_file else f"{title}.cook"
+
     if to_file:
-        with open(f"{title}.cook", "w") as outfile:
+        with open(output_file, "w") as outfile:
             outfile.write("\n".join(recipe) + "\n")
     else:
         print("\n".join(recipe))

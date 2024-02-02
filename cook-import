@@ -23,7 +23,6 @@ parser.add_argument(
     "-f",
     "--file",
     help="If you want the output to be in a file, use this flag. Otherwise defaults to console screen.",
-    action="store_true",
 )
 args = parser.parse_args()
 
