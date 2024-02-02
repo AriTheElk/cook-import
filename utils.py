@@ -54,6 +54,14 @@ def print_recipe(title, link, total_time, image, instructions, to_file=False):
 
     output_file = to_file if to_file else f"{title}.cook"
 
+    # recursively create all necessary folders in the output file path
+    if to_file:
+        import os
+
+        file_path = os.path.dirname(output_file)
+        if file_path and not os.path.exists(file_path):
+            os.makedirs(file_path)
+
     if to_file:
         with open(output_file, "w") as outfile:
             outfile.write("\n".join(recipe) + "\n")
